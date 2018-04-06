@@ -387,7 +387,7 @@ hr {
     opacity: 1; }
   .sidebar[data-active-color="warning"] .nav li.active > a,
   .off-canvas-sidebar[data-active-color="warning"] .nav li.active > a {
-    color: #F3BB45;
+    color: #ffffff;
     opacity: 1; }
   .sidebar[data-active-color="danger"] .nav li.active > a,
   .off-canvas-sidebar[data-active-color="danger"] .nav li.active > a {

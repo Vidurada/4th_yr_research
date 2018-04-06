@@ -8,6 +8,10 @@ module.exports = function(app, passport) {
 		res.render('index.ejs'); // load the index.ejs file
 	});
 
+	app.get('/dashi', function(req, res) {
+		res.render('dashboard0.ejs'); // load the index.ejs file
+	});
+
 
 	// show the login form
 	app.get('/index', function(req, res) {
