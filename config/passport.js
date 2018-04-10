@@ -67,7 +67,7 @@ module.exports = function(passport) {
     );
 
 
-    // LOCAL LOGIN 
+    // LOCAL LOGIN
     passport.use(
         'local-login',
         new LocalStrategy({
