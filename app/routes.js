@@ -42,15 +42,15 @@ module.exports = function(app, passport) {
 		// render the page and pass in any flash data if it exists
 		res.render('signup.ejs', { message: req.flash('signupMessage') });
 	});
-	app.get('/sensors', function(req, res) {
+	//app.get('/sensors', function(req, res) {
 		// render the page and pass in any flash data if it exists
-		res.render('sensors.ejs', { message: req.flash('signupMessage') });
-	});
+	//	res.render('sensors.ejs', { message: req.flash('signupMessage') });
+	//});
     //show the fire spread model
-    app.get('/firespread', function(req, res) {
+    //app.get('/firespread', function(req, res) {
 		// render the page and pass in any flash data if it exists
-		res.render('firespread.ejs', { message: req.flash('signupMessage') });
-	});
+	//	res.render('firespread.ejs', { message: req.flash('signupMessage') });
+	//});
 	// process the signup form
 	app.post('/signup', passport.authenticate('local-signup', {
 		successRedirect : '/index', // redirect to the secure profile section
@@ -63,6 +63,19 @@ module.exports = function(app, passport) {
 
 	app.get('/dashboard', isLoggedIn, function(req, res) {
 		res.render('dashboard.ejs', {
+			user : req.user // get the user out of session and pass to template
+		});
+	});
+
+	app.get('/sensors', isLoggedIn, function(req, res) {
+		res.render('sensors.ejs', {
+			user : req.user // get the user out of session and pass to template
+		});
+	});
+
+
+	app.get('/firespread', isLoggedIn, function(req, res) {
+		res.render('firespread.ejs', {
 			user : req.user // get the user out of session and pass to template
 		});
 	});
