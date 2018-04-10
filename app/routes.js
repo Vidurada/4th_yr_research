@@ -47,6 +47,11 @@ module.exports = function(app, passport) {
 		// render the page and pass in any flash data if it exists
 		res.render('sensors.ejs', { message: req.flash('signupMessage') });
 	});
+    //show the fire spread model
+    app.get('/firespread', function(req, res) {
+		// render the page and pass in any flash data if it exists
+		res.render('firespread.ejs', { message: req.flash('signupMessage') });
+	});
 	// process the signup form
 	app.post('/signup', passport.authenticate('local-signup', {
 		successRedirect : '/index', // redirect to the secure profile section
