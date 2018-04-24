@@ -33,24 +33,25 @@
     <link href="/assets/css/themify-icons.css" rel="stylesheet">
 
 
-<script src = "https://maps.googleapis.com/maps/api/js?language=si"></script>
+<!--<script src = "https://maps.googleapis.com/maps/api/js?language=si"></script>-->
 
       <script>
-         function loadMap() {
-
-            var mapOptions = {
-               center:new google.maps.LatLng(7.257350, 80.628253),
-               zoom:12,
-               mapTypeId:google.maps.MapTypeId.TERRAIN
-
-            };
-
-            var map = new google.maps.Map(document.getElementById("sample"),mapOptions);
-         }
-
-         google.maps.event.addDomListener(window, 'load', loadMap);
+			function initMap() {
+		 var peradeniya = {lat: 7.256214, lng: 80.628467};
+		 var map = new google.maps.Map(document.getElementById('map'), {
+			 zoom: 13,
+			 center: peradeniya,
+			 mapTypeId:google.maps.MapTypeId.TERRAIN
+		 });
+		 var marker = new google.maps.Marker({
+			 position: peradeniya,
+			 map: map
+		 });
+	 }
       </script>
-
+			<script async defer
+			  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3y5RHs8x4P9BRIUWPbSborVUWGly8PXk&callback=initMap&?language=si">
+			</script>
 </head>
 <body>
 
@@ -221,7 +222,7 @@
                                 <!--<p class="category">24 Hours performance</p>-->
                             </div>
                             <div class="content">
-                                <div  id = "sample"  style = "width:1000px; height:580px;"></div>
+                                <div  id = "map"  style = "width:1000px; height:580px;"></div>
 
 
                             </div>
@@ -327,7 +328,7 @@
     <script src="assets/js/bootstrap-notify.js"></script>
 
     <!--  Google Maps Plugin    -->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+
 
     <!-- Paper Dashboard Core javascript and methods for Demo purpose -->
 	<script src="assets/js/paper-dashboard.js"></script>
